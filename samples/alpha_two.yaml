@@ -1,0 +1,30 @@
+openapi: "3.0.1"
+info:
+  title: "qa2_insights"
+  version: "2019-01-31T20:07:28Z"
+servers:
+- url: "https://12345.execute-api.us-east-1.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "/qa"
+test_paths: "this should be a dictionary"
+first_path:
+  /api/vet:
+    post: "post"
+paths:
+  /api/vet:
+    post:
+      responses:
+        200:
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+      security:
+      - dra_qa2_auth: []
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:12345:function:qa2_scores/invocations"
+extra_data:
+  default: "extra data?"

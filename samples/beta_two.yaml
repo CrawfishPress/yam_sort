@@ -1,0 +1,16 @@
+openapi: "3.0.1"
+info:
+  title: "qa2_insights"
+  version: "2019-01-31T20:07:28Z"
+servers:
+- url: "https://12345.execute-api.us-east-1.amazonaws.com/{basePath}"
+  variables:
+    default: "/qa"
+paths:
+  /api/vet:
+    post:
+      responses:
+        200:
+          description: "200 response"
+  /api/one_missing:
+    post: "post"
