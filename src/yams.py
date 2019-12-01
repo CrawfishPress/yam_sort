@@ -33,8 +33,6 @@ from yaml import load, dump, Loader, Dumper
 
 from .differ import key_diff_something, synchronize_keys
 
-from .colors import to_red, to_yellow, to_blue
-
 
 def sync_two_files(some_list, overwrite=False):
     """ Re-orders second file to match key-order of first file. Writes to stdout, or

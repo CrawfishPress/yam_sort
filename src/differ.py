@@ -80,42 +80,6 @@ def key_diff_something(first_data, second_data, format='long', key_sep=KEY_SEP):
 
     cur_key_path = ''
 
-    # missing_keys = []
-    # extra_keys = []
-    # reorder_keys = []
-    # wrong_keys = []
-    #
-    # for f_key, f_val in first_data.items():
-    #     if f_key not in second_data:
-    #         missing_keys.append(f_key)
-    #         continue
-    #     if isinstance(f_val, dict):
-    #         second_sub_dict = second_data[f_key]
-    #         if not isinstance(second_sub_dict, dict):
-    #             wrong_key_path = f"{f_key}:{type(f_key)} != dict"
-    #             wrong_keys.append(wrong_key_path)
-    #             continue
-    #
-    #         for f2_key, f2_val in f_val.items():
-    #             if f2_key not in second_sub_dict:
-    #                 missing_path = f"{f_key}.{f2_key}"
-    #                 missing_keys.append(missing_path)
-    #                 continue
-    #
-    # for f_key, f_val in first_data.items():
-    #     if f_key not in second_data.keys():
-    #         continue
-    #     first_index = list(first_data.keys()).index(f_key)
-    #     second_index = list(second_data.keys()).index(f_key)
-    #     if first_index == second_index:
-    #         continue
-    #     reorder_path = f"{f_key}[{first_index}] != {f_key}[{second_index}]"
-    #     reorder_keys.append(reorder_path)
-    #
-    # for s_key, s_val in second_data.items():
-    #     if s_key not in first_data:
-    #         extra_keys.append(s_key)
-
     meander_down_dict(first_data, second_data, cur_key_path, diffs, format, key_sep)
 
     return diffs
